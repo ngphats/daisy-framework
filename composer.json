@@ -1,0 +1,21 @@
+{
+    "name": "ngphats/daisy-framework",
+    "description": "The Daisy Framework.",
+    "keywords": ["framework"],
+    "type": "project",
+    "require": {
+        "php": ">=5.6"
+    },
+    "require-dev": {
+        "symfony/thanks": "^1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Daisy\\": "vendor/daisyframework/Daisy/src/",
+            "App\\": "app/src"
+        }
+    },
+    "config": {
+        "optimize-autoloader": true
+    }
+}
