@@ -15,11 +15,8 @@ Route::get('/', function() {
 	echo 'Welcome to Daisy Framework';
 });
 
-Route::get('/hello', function() {
-	echo 'Hello World';
-});
-
 Route::get('/index', 'IndexController@index');
 Route::get('/index2', 'IndexController@index2');
+Route::get('/index3', 'IndexController@index3');
 
 Application::end();

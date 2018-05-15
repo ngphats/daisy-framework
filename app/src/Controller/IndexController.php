@@ -16,4 +16,12 @@ class IndexController
 		echo 'Done!';
 		return;
 	}
+
+	public function index3Action() 
+	{
+		return new ViewModel([
+			'title' => 'Index action 2',
+			'content' => 'My content'
+		]);
+	}
 }

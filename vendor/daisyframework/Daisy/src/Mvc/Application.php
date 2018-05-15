@@ -3,6 +3,7 @@
 namespace Daisy\Mvc;
 
 use Daisy\Mvc\Input;
+use Daisy\Mvc\ViewModel;
 
 class Application 
 {
@@ -184,7 +185,7 @@ class Application
 
             $viewModel = call_user_func_array([static::$controller, static::$action], $vars);
 
-            if ($viewModel != '') {
+            if (null !== $viewModel && $viewModel instanceof ViewModel) {
             	$viewModel->setTemplate($callback)->render();
             }
 
