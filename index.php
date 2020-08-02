@@ -20,3 +20,5 @@ Route::get('/index2', 'IndexController@index2');
 Route::get('/index3', 'IndexController@index3');
 
 Application::end();
+
+//end
