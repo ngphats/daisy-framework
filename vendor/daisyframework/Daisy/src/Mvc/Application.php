@@ -128,7 +128,7 @@ class Application
      * @param string $uri
      * @return bool
      */
-    public static function compareRoute($route = '', $uri = '')
+    public static function compareRoute($route = '', $uri = null)
     {
         $route = preg_replace('/\//', '\/', $route); //Escapsing '/'
         preg_match_all('/({.*})/U', $route, $vars); //Get All Abstract Vars
@@ -265,10 +265,10 @@ class Application
         $route = static::$route;
         if ($route && static::$routeNotFound) {
             try {
-                throw new RouteException("Không tìm thấy Route!", 100, null, "Vui lòng kiểm tra lại Route \" <strong style='color: red'>$route</strong> \" và phương thức <strong style='color: red'>{$_SERVER['REQUEST_METHOD']}</strong> có được sử dụng không?");
-            } catch (RouteException $e) {
+                throw new \Exception("Không tìm thấy Route!", 100, null, "Vui lòng kiểm tra lại Route \" <strong style='color: red'>$route</strong> \" và phương thức <strong style='color: red'>{$_SERVER['REQUEST_METHOD']}</strong> có được sử dụng không?");
+            } catch (\Exception $e) {
                 header('Content-Type: text/html');
-                $e->getErrorPage();
+                // $e->getErrorPage();
             }
         }
     }
